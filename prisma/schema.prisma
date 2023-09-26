@@ -61,7 +61,7 @@ model BoardUsers {
 model Columns {
   columnId  Int       @id @default(autoincrement())
   name      String
-  order     Float? @default(dbgenerated("columnId"))
+  order    Int?
   BoardId   Int
   CreatorId Int?
   createdAt DateTime  @default(now())
@@ -94,7 +94,7 @@ model Cards {
   name        String?
   description String
   color       String?
-  order       Float?  
+  order       Int?  
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
   dueDate     DateTime?
